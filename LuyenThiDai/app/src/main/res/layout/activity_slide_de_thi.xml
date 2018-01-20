@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dminh.luyenthidai.Activities.SlideDeThiActivity">
+    <TableLayout
+        android:id="@+id/tl_header"
+        android:shrinkColumns="*"
+        android:stretchColumns="*"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <Button
+                android:id="@+id/bt_showdapan"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:textSize="@dimen/tv_default_size"
+                android:layout_height="wrap_content"
+                android:text="Đáp án"/>
+            <Button
+                android:id="@+id/bt_showketqua"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:textSize="@dimen/tv_default_size"
+                android:layout_height="wrap_content"
+                android:text="Kết quả làm"/>
+
+        </TableRow>
+    </TableLayout>
+
+    <io.github.kexanie.library.MathView
+        android:id="@+id/mv_cauhoi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        style="@style/Base.TextAppearance.AppCompat.Large"
+        app:engine="MathJax"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tl_header">
+    </io.github.kexanie.library.MathView>
+
+    <ImageView
+        android:id="@+id/im_cauhoi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mv_cauhoi"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mv_cauhoi" />
+
+        <LinearLayout
+            app:layout_constraintTop_toBottomOf="@id/im_cauhoi"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rb_dapanA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:checked="false"
+                    android:onClick="onRadioButtonClicked" />
+
+                <io.github.kexanie.library.MathView
+                    android:id="@+id/mv_dapanA"
+                    style="@style/Base.TextAppearance.AppCompat.Large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/rb_dapanA"
+                    app:engine="MathJax">
+                </io.github.kexanie.library.MathView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rb_dapanB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:checked="false"
+                    android:onClick="onRadioButtonClicked" />
+                <io.github.kexanie.library.MathView
+                    android:id="@+id/mv_dapanB"
+                    android:layout_toRightOf="@id/rb_dapanB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    style="@style/Base.TextAppearance.AppCompat.Large"
+                    android:focusable="true"
+                    app:engine="MathJax">
+                </io.github.kexanie.library.MathView>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rb_dapanC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:checked="false"
+                    android:onClick="onRadioButtonClicked" />
+
+                <io.github.kexanie.library.MathView
+                    android:id="@+id/mv_dapanC"
+                    android:layout_toRightOf="@id/rb_dapanC"
+                    android:layout_width="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    style="@style/Base.TextAppearance.AppCompat.Large"
+                    android:focusable="true"
+                    app:engine="MathJax">
+                </io.github.kexanie.library.MathView>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rb_dapanD"
+                    style="@android:style/Widget.Holo.Light.CompoundButton.RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:checked="false"
+                    android:onClick="onRadioButtonClicked" />
+                <io.github.kexanie.library.MathView
+                    android:id="@+id/mv_dapanD"
+                    style="@style/Base.TextAppearance.AppCompat.Large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_toRightOf="@id/rb_dapanD"
+                    app:engine="MathJax">
+                </io.github.kexanie.library.MathView>
+            </RelativeLayout>
+            </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="*"
+        android:stretchColumns="*"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TableRow>
+
+            <ImageButton
+                android:id="@+id/ib_back"
+                android:src="@drawable/ic_goback"
+                android:layout_width="0dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:background="@null"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_socau"
+                android:layout_width="0dp"
+                android:text="Xin Chờ"
+                android:gravity="center"
+                android:textSize="@dimen/tv_default_size"
+                android:layout_height="wrap_content"
+                android:layout_weight="2" />
+
+            <ImageButton
+                android:gravity="center_horizontal|center_vertical"
+                android:background="@null"
+                android:id="@+id/ib_forward"
+                android:layout_width="0dp"
+                android:src="@drawable/ic_goforward"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </TableRow>
+    </TableLayout>
+
+
+</android.support.constraint.ConstraintLayout>
